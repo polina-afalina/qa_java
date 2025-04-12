@@ -3,21 +3,20 @@ package com.example;
 import java.util.List;
 
 public class Lion {
-    //Добавляем в классе Lion приватное поле типа Feline
-    private final Feline feline;
+
     boolean hasMane;
 
-    //Внедряем зависимость через конструктор
-    public Lion(String sex, Feline feline) throws Exception {
+    public Lion(String sex) throws Exception {
         if ("Самец".equals(sex)) {
             hasMane = true;
         } else if ("Самка".equals(sex)) {
             hasMane = false;
         } else {
-            throw new Exception("Используйте допустимые значения пола животного - самец или самка");
+            throw new Exception("Используйте допустимые значения пола животного - самей или самка");
         }
-        this.feline = feline;
     }
+
+    Feline feline = new Feline();
 
     public int getKittens() {
         return feline.getKittens();
