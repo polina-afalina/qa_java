@@ -44,6 +44,6 @@ public class LionHasManeParameterizedTest {
 
     @Test
     public void testDoesHaveManeBySex() {
-        assertEquals(expectedHasMane, lion.doesHaveMane());
+        assertEquals("Ошибка: для пола " + sex + " ожидалась грива = " + expectedHasMane,expectedHasMane, lion.doesHaveMane());
     }
 }

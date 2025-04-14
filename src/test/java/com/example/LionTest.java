@@ -25,19 +25,19 @@ public class LionTest {
     // проверяем, что объект lion создан
     @Test
     public void testConstructorInitializesCorrectly() {
-        assertNotNull(lion);
+        assertNotNull("Ошибка: объект класса Lion не создан.", lion);
     }
 
     @Test
     public void testGetKittensReturnsDefaultValue() {
         when(feline.getKittens()).thenReturn(1); // можно мокнуть поведение
-        assertEquals(1, lion.getKittens());
+        assertEquals("Ошибка: ожидалось число 1.",1, lion.getKittens());
     }
 
     @Test
     public void testGetFoodReturnsPredatorFood() throws Exception {
         when(feline.getFood("Хищник")).thenReturn(Arrays.asList("Животные", "Птицы", "Рыба"));
-        assertEquals(Arrays.asList("Животные", "Птицы", "Рыба"), lion.getFood());
+        assertEquals("Ошибка: ожидался список [Животные, Птицы, Рыба].",Arrays.asList("Животные", "Птицы", "Рыба"), lion.getFood());
         verify(feline).getFood("Хищник");
     }
 

@@ -20,21 +20,21 @@ public class FelineTest {
     // проверяем, что объект feline создан
     @Test
     public void testConstructorInitializesCorrectly() {
-        assertNotNull(feline);
+        assertNotNull("Ошибка: объект класса Feline не создан.", feline);
     }
 
     @Test
     public void testEatMeatReturnsPredatorFood() throws Exception {
-        assertEquals(Arrays.asList("Животные", "Птицы", "Рыба"), feline.eatMeat());
+        assertEquals("Ошибка: ожидался список [Животные, Птицы, Рыба].",Arrays.asList("Животные", "Птицы", "Рыба"), feline.eatMeat());
     }
 
     @Test
     public void testGetKittensWithoutParams() {
-        assertEquals(1, feline.getKittens());
+        assertEquals("Ошибка: ожидалось число 1.",1, feline.getKittens());
     }
 
     @Test
     public void testGetFamily() {
-        assertEquals("Кошачьи", feline.getFamily());
+        assertEquals("Ошибка: ожидалась строка \"Кошачьи\".", "Кошачьи", feline.getFamily());
     }
 }

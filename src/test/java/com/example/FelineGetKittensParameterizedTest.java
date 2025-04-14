@@ -17,7 +17,7 @@ public class FelineGetKittensParameterizedTest {
         this.expected = expected;
     }
 
-    @Parameterized.Parameters
+    @Parameterized.Parameters(name = "{index}:getKittens({0}) -> {1}")
     public static Object[][] data() {
         return new Object[][]{
                 {0, 0},
@@ -30,6 +30,6 @@ public class FelineGetKittensParameterizedTest {
     @Test
     public void testGetKittensWithParam() {
         Feline feline = new Feline();
-        assertEquals(expected, feline.getKittens(input));
+        assertEquals("Ошибка: метод getKittens(" + input + ") должен вернуть " + expected,expected, feline.getKittens(input));
     }
 }

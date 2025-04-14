@@ -27,17 +27,17 @@ public class CatTest {
     // проверяем, что объект cat создан
     @Test
     public void testConstructorInitializesCorrectly() {
-        assertNotNull(cat);
+        assertNotNull("Ошибка: объект класса Cat не создан.",cat);
     }
 
     @Test
     public void testGetSound() {
-        assertEquals("Мяу", cat.getSound());
+        assertEquals("Ошибка: ожидалась строка \"Мяу\".", "Мяу", cat.getSound());
     }
 
     @Test
     public void testGetFood() throws Exception {
         when(feline.eatMeat()).thenReturn(Arrays.asList("Животные", "Птицы", "Рыба"));
-        assertEquals(Arrays.asList("Животные", "Птицы", "Рыба"), cat.getFood());
+        assertEquals("Ошибка: ожидался список [Животные, Птицы, Рыба].",Arrays.asList("Животные", "Птицы", "Рыба"), cat.getFood());
     }
 }
